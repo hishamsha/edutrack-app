@@ -1,0 +1,619 @@
+/* EduTrack Pro - Component Styles & Layout */
+
+/* App Wrapper */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Navbar */
+.app-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 80;
+  background: rgba(13, 19, 31, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-logo-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.35);
+}
+
+.brand-name {
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  background: linear-gradient(90deg, #f8fafc 0%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.brand-sub {
+  font-size: 0.65rem;
+  color: var(--text-dim);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* User Switcher Pill */
+.user-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(30, 41, 59, 0.7);
+  border: 1px solid var(--border-subtle);
+  padding: 5px 12px 5px 8px;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.user-pill:hover {
+  background: rgba(51, 65, 85, 0.9);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.user-avatar-circle {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #2563eb;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+/* User Switcher Dropdown */
+.user-menu-dropdown {
+  position: absolute;
+  top: 54px;
+  right: 16px;
+  width: 290px;
+  background: #111827;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  padding: 12px;
+  z-index: 120;
+  animation: slideUp 0.2s ease-out;
+}
+
+.user-menu-header {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+  padding: 0 4px;
+}
+
+.user-option-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  margin-bottom: 4px;
+}
+
+.user-option-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.user-option-item.active {
+  background: rgba(59, 130, 246, 0.16);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+/* Desktop vs Mobile Toggle */
+.mode-toggle-btn {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.mode-toggle-btn:hover {
+  color: var(--text-main);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Main Viewport Container */
+.main-content {
+  flex: 1;
+  padding: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.mobile-content-wrapper {
+  flex: 1;
+  overflow-y: auto;
+  padding: 14px 14px 80px 14px;
+}
+
+/* Active Check-in Banner / Card */
+.active-checkin-banner {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(6, 182, 212, 0.15) 100%);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.15);
+}
+
+.active-checkin-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  bottom: 0;
+  background: #10b981;
+}
+
+.active-visit-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.active-visit-school {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-top: 4px;
+}
+
+.active-visit-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8rem;
+  color: #94a3b8;
+  margin-bottom: 16px;
+}
+
+.active-visit-meta span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.active-visit-actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* Large Check In CTA Card (When Not Checked In) */
+.checkin-hero-card {
+  background: linear-gradient(135deg, #1e3a8a 0%, #1e293b 100%);
+  border: 1px solid rgba(59, 130, 246, 0.4);
+  border-radius: var(--radius-xl);
+  padding: 24px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(37, 99, 235, 0.25);
+}
+
+.checkin-hero-card::after {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.3), transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.checkin-hero-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+.checkin-hero-desc {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  margin-bottom: 20px;
+  max-width: 480px;
+}
+
+/* Stats Overview Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+  .stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+}
+
+.stat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.stat-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.stat-value {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-top: 6px;
+}
+
+.stat-sub {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* Section Header */
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  margin-top: 8px;
+}
+
+.section-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Task / Itinerary Item */
+.task-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 14px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  margin-bottom: 10px;
+  transition: all var(--transition-fast);
+}
+
+.task-item:hover {
+  background: var(--bg-card-hover);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.task-checkbox {
+  margin-top: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  border: 2px solid var(--accent-sky);
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: all var(--transition-fast);
+}
+
+.task-checkbox.checked {
+  background: var(--success);
+  border-color: var(--success);
+}
+
+.task-content {
+  flex: 1;
+}
+
+.task-school {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent-sky);
+}
+
+.task-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin: 2px 0 4px;
+}
+
+.task-title.completed {
+  text-decoration: line-through;
+  color: var(--text-dim);
+}
+
+.task-instructions {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* Visit History & Activity Feed Card */
+.visit-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  margin-bottom: 16px;
+  transition: all var(--transition-normal);
+}
+
+.visit-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.visit-school-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.visit-badge-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.photo-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.watermarked-photo-thumb {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+  cursor: pointer;
+  transition: transform var(--transition-fast);
+}
+
+.watermarked-photo-thumb:hover {
+  transform: scale(1.03);
+}
+
+/* Expense Card */
+.expense-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  margin-bottom: 10px;
+}
+
+.expense-amount {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #38bdf8;
+  text-align: right;
+}
+
+/* Schools Directory Cards */
+.school-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .school-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1100px) {
+  .school-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.school-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-normal);
+}
+
+.school-card:hover {
+  border-color: var(--border-highlight);
+  transform: translateY(-2px);
+}
+
+.school-card-media {
+  height: 120px;
+  width: 100%;
+  object-fit: cover;
+  background: #1e293b;
+}
+
+.school-card-body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.school-card-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+/* Admin Dashboard Elements */
+.admin-team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.team-officer-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  background: var(--bg-surface);
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  text-align: left;
+}
+
+.data-table th {
+  background: rgba(30, 41, 59, 0.9);
+  padding: 12px 14px;
+  font-weight: 700;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border-subtle);
+  white-space: nowrap;
+}
+
+.data-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  color: var(--text-main);
+}
+
+.data-table tr:hover td {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* Camera / Watermark preview box */
+.camera-preview-box {
+  width: 100%;
+  height: 220px;
+  border: 2px dashed rgba(56, 189, 248, 0.4);
+  border-radius: var(--radius-lg);
+  background: rgba(15, 23, 42, 0.6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  transition: all var(--transition-fast);
+}
+
+.camera-preview-box:hover {
+  border-color: var(--accent-sky);
+  background: rgba(15, 23, 42, 0.9);
+}
+
+.camera-preview-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* GPS Indicator Banner */
+.gps-pill-banner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  border-radius: var(--radius-md);
+  margin-bottom: 16px;
+  font-size: 0.82rem;
+  color: #e0f2fe;
+}
